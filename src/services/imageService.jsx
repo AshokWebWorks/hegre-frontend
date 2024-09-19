@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Fetch images with pagination (default behavior)
 export const fetchImages = async (nextCursor = null) => {
-  const response = await axios.get("http://localhost:5000/api/images", {
+  const response = await axios.get("https://hegre-backend.onrender.com/api/images", {
     params: { next_cursor: nextCursor },
   });
   return response.data;
@@ -11,7 +11,7 @@ export const fetchImages = async (nextCursor = null) => {
 // Fetch images by folder name
 export const fetchImagesByFolder = async (folder) => {
   const response = await axios.get(
-    `http://localhost:5000/api/images/folder/${folder}`
+    `https://hegre-backend.onrender.com/api/images/folder/${folder}`
   );
   return response.data;
 };
@@ -19,7 +19,7 @@ export const fetchImagesByFolder = async (folder) => {
 // Fetch images by tag
 export const fetchImagesByTag = async (tag) => {
   const response = await axios.get(
-    `http://localhost:5000/api/images/tag/${tag}`
+    `https://hegre-backend.onrender.com/api/images/tag/${tag}`
   );
   return response.data;
 };
